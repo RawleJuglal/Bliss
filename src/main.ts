@@ -89,7 +89,8 @@ document.getElementById('btn-send-prompt')?.addEventListener('click', async ()=>
     experience:${userInput}
     message:
     `
-    const qResponse = await callForCompletion(qPrompt, 60, null)
+    const qResponse = await callForCompletion(qPrompt, 20, null)
+    console.log(qResponse)
     if(!qResponse.data.choices[0].text)throw new ReferenceError(`qResponse doesn't exist`)
     renderWithResponse('#travel-agent-text', qResponse.data.choices[0].text.trim())
 
@@ -102,7 +103,8 @@ document.getElementById('btn-send-prompt')?.addEventListener('click', async ()=>
     experience: ${userInput}
     synopsis: 
     `
-    const sResponse = await callForCompletion(sPrompt, 240, null)
+    const sResponse = await callForCompletion(sPrompt, 150, null)
+    console.log(sResponse)
     if(!sResponse.data.choices[0].text)throw new ReferenceError(`sResponse doesn't exist`)
     const synopsis:string = sResponse.data.choices[0].text.trim()
     renderWithResponse('#vacation-text', synopsis)
@@ -115,7 +117,8 @@ document.getElementById('btn-send-prompt')?.addEventListener('click', async ()=>
     synopsis:${synopsis}
     title:
     `
-    const tResponse = await callForCompletion(tPrompt, 25, .9)
+    const tResponse = await callForCompletion(tPrompt, 15, .9)
+    console.log(tResponse)
     if(!tResponse.data.choices[0].text)throw new ReferenceError(`tResponse doesn't exist`)
     const title = tResponse.data.choices[0].text.trim()
     renderWithResponse('#vacation-title', title)
@@ -135,7 +138,8 @@ document.getElementById('btn-send-prompt')?.addEventListener('click', async ()=>
     synopsis:${synopsis}
     stars:
     `
-    const lResponse = await callForCompletion(lPrompt, 30, null)
+    const lResponse = await callForCompletion(lPrompt, 15, null)
+    console.log(lResponse)
     if(!lResponse.data.choices[0].text)throw new ReferenceError(`lResponse doesn't exist`)
     renderWithResponse('#vacation-activities', lResponse.data.choices[0].text.trim())
 
@@ -151,7 +155,8 @@ document.getElementById('btn-send-prompt')?.addEventListener('click', async ()=>
     synopsis: ${synopsis}
     image description: 
     `
-    const iResponse = await callForCompletion(iPrompt, 100, .8)
+    const iResponse = await callForCompletion(iPrompt, 80, .8)
+    console.log(iResponse)
     if(!iResponse.data.choices[0].text)throw new ReferenceError(`iResponse doesn't exist`)
     const imagePromt = iResponse.data.choices[0].text.trim()
     console.log(imagePromt)
