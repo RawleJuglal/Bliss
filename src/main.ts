@@ -8,7 +8,7 @@ import LoadingImg from './assets/loading.svg'
 import './style.css'
 
 const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY
+  apiKey: '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'
 })
 
 const openai = new OpenAIApi(configuration)
