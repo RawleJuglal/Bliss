@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700;800;900&display=swap');
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+*,*::before, *::after{
+    box-sizing: border-box;
+}
+
+:root{
+    font-size:16px;
+    font-family: 'Prompt', sans-serif;
+    --primary-font:'Prompt', sans-serif;
+    --royalBlue:#0a2463;
+    --imperialRed:#fb3640;
+    --davysGray:#605f5e;
+    --cerulean:#247ba0;
+    --platinum:#e2e2e2;
+    --white:whitesmoke;
+    --black:#161616;
+    --block-center:0 auto;
+	--fourPX:.25rem;
+	--eightPX:.5rem;
+	--twelvePX:.75rem;
+	--sixteenPX:1rem;
+    --eighteenPX:1.125rem;
+	--twentyPX:1.25rem;
+	--twentyfourPX:1.5rem;
+	--thirtytwoPX:2rem;
+    --fourtyeightPX:3rem;
+}
+
+.page-container{
+    max-width: 23.4375em; 
+    margin:var(--block-center);
+}
+
+.block{display:block;}
+
+.IVpt{font-size: var(--fourPX);}
+.VIIIpt{font-size:var(--eightPX)}
+.XIIpt{font-size:var(--twelvePX)}
+.XVIIIpt{font-size: var(--eighteenPX);}
+.XXpt{font-size:var(--twentyPX)}
+.XXIVpt{font-size: var(--twentyfourPX);}
+.XXXIIpt{font-size: var(--thirtytwoPX);}
+.XLVIIIpt{font-size: var(--fourtyeightPX);}
+
+.flex{display:flex;}
+.flex-column{flex-direction: column;}
+.flex-center{justify-content: center;}
+.flex-wrap{flex-wrap: wrap;}
+.flex-align-center{align-items: center;}
+
+.medium{font-weight:500}
+.semi-bold{font-weight: 600;}
+.bold{font-weight: 700;}
+.extra-bold{font-weight:800}
+.black-weight{font-weight: 900;}
+
+.black{color:var(--black)}
+.white{color:var(--white)}
+
+input[type='text']{
+	font-family: var(--primary-font);
+	padding:var(--sixteenPX);
+}
+
+.--app-page-container{
+    min-height:100vh;
+}
+
+
+/*Header Styles */
+.--app-header{
+    background-color:var(--platinum);
+}
+
+.--app-header>svg{
+    color:var(--cerulean);
+}
+
+.--app-header>h1{
+    color:var(--black);
+    margin-left:var(--fourPX);
+    padding-bottom:var(--eightPX);
+}
+
+/*Main Styles*/
+.--app-main-container{
+    margin:0 1rem;
+}
+
+.--main-prompt-container{
+    margin:1rem auto;
+    background-color:gray;
+    border-radius:var(--eightPX);
+    box-shadow: 0px 10px 3px -6px var(--black);
+}
+
+.--main-prompt-inner-container{   
+    display: flex;
+    justify-content: space-around;
+    padding: 1.5em .5em;
+    min-height: 200px;
+}
+
+.--travel-guy{
+    width: 40%;
+    filter: drop-shadow(3px 2px 3px var(--davysGray));
+    align-self: center;
+}
+
+.speech-bubble-ai {
+    max-width: 55%;
+    min-height: 124px;
+    border-radius: var(--twelvePX);
+    position: relative;
+    margin: 0;
+    border: 3px solid var(--imperialRed);
+    background-color: var(--white);
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    text-shadow:0 0 2px var(--white)
+}
+
+.speech-bubble-ai:before {
+    content: "";
+    position: absolute;
+    border-left: 9px solid transparent;
+    border-right: 9px solid var(--imperialRed);
+    border-top: 9px solid var(--imperialRed);
+    border-bottom: 9px solid transparent;
+    left: -21px;
+    top: 64px;
+}
+
+.speech-bubble-ai:after {
+    content: "";
+    position: absolute;
+    border-left: 7px solid transparent;
+    border-right: 7px solid var(--white);
+    border-top: 7px solid var(--white);
+    border-bottom: 7px solid transparent;
+    left: -11px;
+    top: 68px;
+}
+
+.speech-bubble-ai>p {
+    padding: 1.3rem 1rem;
+    color: var(--royalBlue);
+    line-height: 1.1rem;
+    letter-spacing: .015rem;
+}
+
+.--user-prompt-container{
+    padding:1.5rem .5rem;
+}
+
+.--user-prompt-input{
+    color:var(--black);
+    overflow: hidden;
+    text-shadow:0 0 2px var(--davysGray);
+}   
+
+.--btn-send-prompt{
+    background-color: var(--royalBlue);
+    color:var(--white);
+    border:none;
+}
+
+.--btn-send-prompt:hover{
+    background-color: var(--cerulean);
+    cursor: pointer;
+}
+
+.loading{
+    max-width:40px;
+    margin:0 auto;
+}
+
+.view-pitch-btn {
+    color: var(--white);
+    background-color:var(--royalBlue);
+    border-radius: var(--eightPX);
+    padding: 1em;
+    margin: .4em auto;
+    display: block;
+    font-size: 1.2em;
+}
+
+.view-pitch-btn:hover {
+    background-color: var(--cerulean);
+    cursor: pointer;
+    box-shadow: 1px 1px 5px 1px var(--davysGray);
+}
+
+.--main-response-container {
+    display: none;
+    flex-direction: column;
+    margin: 1em auto;
+    color: var(--davysGray);
+    background-color:gray;
+    padding: 1em;
+    border-radius:var(--eightPX);
+    box-shadow: 0px 10px 3px -6px var(--black);
+}
+
+.--main-vacation-img-container>img {
+    max-width: 100%;
+    border-radius: var(--border-rad-lg);
+    box-shadow: 1px 1px 5px 1px var(--dark);
+}
+
+.--response-vacation-title{
+    color:var(--royalBlue);
+    margin:var(--twelvePX) 0;
+}
+
+.--response-vacation-activities{
+    margin:0 0 var(--eightPX) 0;
+    line-height: 1.1rem;
+    letter-spacing: .015rem;
+}
+
+.--response-vacation-text{
+    margin:0 0 var(--fourPX) 0;
+    line-height: 1.1rem;
+    letter-spacing: .015rem;
+    text-shadow:0 0 2px var(--davysGray);
+}
+
+/*Footer Styles*/
+.--app-footer{
+    background-color: var(--davysGray);
+    color:var(--white);
+    padding:var(--eightPX);
+    margin-top:auto;
+}
