@@ -1,3 +1,4 @@
+import { process } from '../env'
 import { Configuration, OpenAIApi } from 'openai'
 import 'bootstrap'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
@@ -7,7 +8,7 @@ import LoadingImg from './assets/loading.svg'
 import './style.css'
 
 const configuration = new Configuration({
-  apiKey: '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'
+  apiKey: process.env.OPENAI_API_KEY
 })
 
 const openai = new OpenAIApi(configuration)
