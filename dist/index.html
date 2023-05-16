@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/Bliss/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+    <script type="module" crossorigin src="/Bliss/assets/index-25b80cfe.js"></script>
+    <link rel="stylesheet" href="/Bliss/assets/index-ebdc4124.css">
+  </head>
+  <body>
+    <div id="app" class="--app-page-container flex flex-column">
+      <header id="header" class="--app-header flex flex-center flex-align-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-camera2" viewBox="0 0 16 16">
+          <path d="M5 8c0-1.657 2.343-3 4-3V4a4 4 0 0 0-4 4z"/>
+          <path d="M12.318 3h2.015C15.253 3 16 3.746 16 4.667v6.666c0 .92-.746 1.667-1.667 1.667h-2.015A5.97 5.97 0 0 1 9 14a5.972 5.972 0 0 1-3.318-1H1.667C.747 13 0 12.254 0 11.333V4.667C0 3.747.746 3 1.667 3H2a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1h.682A5.97 5.97 0 0 1 9 2c1.227 0 2.367.368 3.318 1zM2 4.5a.5.5 0 1 0-1 0 .5.5 0 0 0 1 0zM14 8A5 5 0 1 0 4 8a5 5 0 0 0 10 0z"/>
+        </svg>
+        <h1 class="bold XLVIIIpt">Bliss</h1>
+      </header>
+      <main id="app-main-container" class="--app-main-container">
+        <section id="app-ai-prompt" class="--main-prompt-container page-container">
+          <div id="app-ai-prompt-inner" class="--main-prompt-inner-container">
+            <div class="speech-bubble-ai extra-bold" id="speech-bubble-ai">
+              <p id="travel-agent-text" class="--travel-agent-text XVIIIpt">
+                I've been just about everywhere! Give me a one sentence description of the type 
+                of experience you'd like to have and I'll give you your dream destination!
+              </p>
+            </div>
+          </div>
+          <div id="user-prompt-container" class="input-group --user-prompt-container">
+            <textarea 
+              id="user-prompt-input"
+              class="form-control --user-prompt-input semi-bold XIIpt" 
+              aria-label="prompt open ai with one sentence ideal experience in text area"
+              placeholder="A romantic beach with lots of nightlife and young people to mingle with"
+            ></textarea>
+            <span class="input-group-text --btn-send-prompt" id="btn-send-prompt">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
+                <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/>
+              </svg>
+            </span>
+          </div>         
+        </section>
+        <section id="app-ai-response" class="--main-response-container page-container">
+          <div id="vacation-img-container" class="--main-vacation-img-container"></div>
+          <h1 id="vacation-title" class="--response-vacation-title black extra-bold XXpt"></h1>
+          <h2 id="vacation-activities" class="--response-vacation-activities black bold"></h2>
+          <p id="vacation-text" class="--response-vacation-text black semi-bold"></p>
+        </section>
+      </main>
+      <footer id="footer" class="--app-footer flex flex-center flex-align-center">
+        <h1>©️ 2023 Bliss All rights reserved</h1>
+      </footer>
+    </div>
+    
+  </body>
+</html>
