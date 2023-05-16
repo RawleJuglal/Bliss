@@ -83,13 +83,10 @@ document.getElementById('btn-send-prompt')?.addEventListener('click', async ()=>
     experience: A sandy beach filled with young people to mingle with.
     message: I'll need to think about that. But this experience sounds amazing! I love feeling the sand in my toes!
     ###
-    experience: A quiet spot to pitch a tent and stare at the stars undisturbed.
-    message: I'll spend a few moments considering that. But I love your idea!! A quiet night under the stars is so soothing!
-    ###
     experience:${userInput}
     message:
     `
-    const qResponse = await callForCompletion(qPrompt, 20, null)
+    const qResponse = await callForCompletion(qPrompt, 40, null)
     console.log(qResponse)
     if(!qResponse.data.choices[0].text)throw new ReferenceError(`qResponse doesn't exist`)
     renderWithResponse('#travel-agent-text', qResponse.data.choices[0].text.trim())
@@ -103,7 +100,7 @@ document.getElementById('btn-send-prompt')?.addEventListener('click', async ()=>
     experience: ${userInput}
     synopsis: 
     `
-    const sResponse = await callForCompletion(sPrompt, 150, null)
+    const sResponse = await callForCompletion(sPrompt, 200, null)
     console.log(sResponse)
     if(!sResponse.data.choices[0].text)throw new ReferenceError(`sResponse doesn't exist`)
     const synopsis:string = sResponse.data.choices[0].text.trim()
@@ -111,13 +108,14 @@ document.getElementById('btn-send-prompt')?.addEventListener('click', async ()=>
 
     const tPrompt:string = `Write an intriguing title based on the synopsis
     ###
-    synopsis:Get ready to party and experience the unbelievable nightlife of Barcelona, Spain! Whether you love hip-hop or house music, this city knows how to keep the party going. Start your night off with a drink at the infamous [Razzmatazz], sip some beer under the stars at [Sutton] and move to the groovy beats at [Opium]. With vibrant clubs, rooftop lounges, and beachside bars, you'll never want the night to end. This is the ultimate escape for anyone ready to keep the party alive!
+    synopsis:Get ready to party and experience the unbelievable nightlife of Barcelona, Spain! Start your night off with a drink at the infamous [Razzmatazz], 
+    sip some beer under the stars at [Sutton] and move to the groovy beats at [Opium]. This is the ultimate escape for anyone ready to keep the party alive!
     title: Burning the Midnight Oil in Barcelona!
     ###
     synopsis:${synopsis}
     title:
     `
-    const tResponse = await callForCompletion(tPrompt, 15, .9)
+    const tResponse = await callForCompletion(tPrompt, 30, .9)
     console.log(tResponse)
     if(!tResponse.data.choices[0].text)throw new ReferenceError(`tResponse doesn't exist`)
     const title = tResponse.data.choices[0].text.trim()
@@ -125,20 +123,15 @@ document.getElementById('btn-send-prompt')?.addEventListener('click', async ()=>
 
     const lPrompt:string = `Generate a response of all the locations listed in brackets
     ###
-    synopsis:Experience the magical beauty of the Azores, Portugal. Far away from the hustle 
-    and bustle of big cities, the Azores offer stunning views in a peaceful environment. 
-    Spend the day outside exploring the region's rugged coastlines and remote beaches. 
-    Visit the stunning [Lagoa das Sete Cidades] for some of the most breath-taking scenery 
-    you will ever see. Go up to the cottage town of [Furnas] for some of the best hiking 
-    trails in the area full of long pine and eucalyptus forests. Finally, enjoy some 
-    delicious local gastronomy in the [S.Cristovão] beach, the perfect way to end a day 
-    of adventure.
+    synopsis:Visit the stunning [Lagoa das Sete Cidades] for some of the most breath-taking scenery. 
+    Go up to the cottage town of [Furnas] for some of the best hiking 
+    trails. Enjoy some delicious local gastronomy in the [S.Cristovão] beach.
     stars: Lagoa das Sete Cidades, Furnas, S.Cristovão
     ###
     synopsis:${synopsis}
     stars:
     `
-    const lResponse = await callForCompletion(lPrompt, 15, null)
+    const lResponse = await callForCompletion(lPrompt, 25, null)
     console.log(lResponse)
     if(!lResponse.data.choices[0].text)throw new ReferenceError(`lResponse doesn't exist`)
     renderWithResponse('#vacation-activities', lResponse.data.choices[0].text.trim())
@@ -146,9 +139,10 @@ document.getElementById('btn-send-prompt')?.addEventListener('click', async ()=>
     const iPrompt = `Give a short description of an image which could be used to advertise the experience based on the title and synopsis. The description should be rich in visual detail but contain no names.
     ###
     title: Romancing in Bali - An Unforgettable Holiday Awaits!
-    synopsis: For a romantic escapade, look no further than beautiful Bali. You can get lost in the breathtaking scenery and romantic vibes, taking in the stunning beaches, breathtaking jungles, traditional villages, and the exotic culture!
-    Relax and unwind on River Rafting Tours in the Ayung River or explore Balinese culture with a visit to a local community temple. Sample traditional Balinese cuisine in a peaceful setting at [La Summer Gallery] or take a romantic walk along the shore of [Nusa Dua Beach].
-    Make your romantic stay in Bali unique with a sunrise hot-air balloon ride over the horizon, and indulge in tranquil spa treatments available in some of the finest hotels and resorts. Kickstart your magical romantic Bali getaway with the perfect rendezvous now!
+    synopsis: For a romantic escapade, look no further than beautiful Bali. Relax and unwind on River Rafting Tours in the Ayung River or explore Balinese culture with a 
+    visit to a local community temple. Sample traditional Balinese cuisine in a peaceful setting at [La Summer Gallery] or take a romantic walk along the 
+    shore of [Nusa Dua Beach]. Make your romantic stay in Bali unique with a sunrise hot-air balloon ride over the horizon, and indulge in tranquil spa treatments 
+    available in some of the finest hotels and resorts.
     image description: A collage of hot-air balloon at sunrise, beautiful temples, and breathtaking rivers in Bali.
     ###
     title: ${title}
