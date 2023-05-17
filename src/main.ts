@@ -1,4 +1,3 @@
-import { process } from '../env'
 import { Configuration, OpenAIApi } from 'openai'
 import 'bootstrap'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
@@ -7,8 +6,9 @@ import TravelBG from './assets/travel-bg.jpg'
 import LoadingImg from './assets/loading.svg'
 import './style.css'
 
+const secretKey = process.env.OPENAI_API_KEY
 const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY
+  apiKey: secretKey
 })
 
 const openai = new OpenAIApi(configuration)
