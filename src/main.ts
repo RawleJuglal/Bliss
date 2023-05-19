@@ -1,3 +1,4 @@
+import { process } from '../env'
 import { Configuration, OpenAIApi } from 'openai'
 import 'bootstrap'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
